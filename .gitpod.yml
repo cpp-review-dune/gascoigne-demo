@@ -7,7 +7,7 @@ tasks:
       PACKAGES: "openmp eigen suitesparse cmake"
     command: |
       yay -Sy --noconfirm
-      yay -S metis ${PACKAGES}
+      yay -S metis ${PACKAGES} --noconfirm
       [ -d gascoignelib ] || git clone -q ${REPO}
       cmake -S gascoignelib -B build -DBUILD_TESTS=ON -DWITH_THREADS=ON -DWITH_UMFPACK=ON
       cmake --build build --target all
