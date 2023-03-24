@@ -1,4 +1,4 @@
-image: registry.gitlab.com/dune-archiso/images/dune-archiso
+image: registry.gitlab.com/dune-archiso/images/dune-archiso-yay
 
 tasks:
   - name: Clone a flexible finite element toolkit
