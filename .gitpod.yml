@@ -1,0 +1,13 @@
+image: registry.gitlab.com/dune-archiso/images/dune-archiso
+
+tasks:
+  - name: Clone a flexible finite element toolkit
+    env:
+      REPO: "https://kosinus.math.uni-magdeburg.de/gascoigne/gascoignelib.git"
+      PACKAGES: "openmp eigen metis suitesparse cmake"
+    command: |
+      sudo pacman -Sy --noconfirm
+      sudo pacman -S ${PACKAGES}
+      [ -d gascoignelib ] || git clone -q ${REPO}
+      cmake -S gascoignelib -B build -DBUILD_TESTS=ON -DWITH_THREADS=ON -DWITH_UMFPACK=ON
+      cmake --build build --target all
