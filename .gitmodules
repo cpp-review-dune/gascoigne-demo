@@ -1,0 +1,3 @@
+[submodule "gascoignelib"]
+	path = gascoignelib
+	url = https://github.com/cpp-review-dune/gascoignelib.git
